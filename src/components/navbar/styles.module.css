@@ -1,0 +1,82 @@
+.main_container {
+  width: 100%;
+  padding: 24px 72px 24px 49px;
+  border: 0px 0px 1px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  background: var(--english_holly, #022c22);
+  border-bottom: 1px solid #d9dedd;
+  color: white;
+}
+.nav_list_container {
+  max-width: 430px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.nav_list_container li {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.004em;
+}
+.nav_btn_container {
+  max-width: 229px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.login_btn {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.004em;
+}
+.started_btn {
+  max-width: 130px;
+  padding: 12px 20px 12px 20px;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.004em;
+  text-align: center;
+  color: var(--english_holly, #022c22);
+  background: var(--white, #ffffff);
+}
+
+.hamburger_icon {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav_list_container,
+  .nav_btn_container {
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main_container {
+    padding: 24px; /* Adjust padding for medium screens */
+  }
+  .nav_list_container {
+    display: none;
+  }
+  .nav_btn_container {
+    display: none;
+  }
+  .hamburger_icon {
+    display: block;
+  }
+  .main_logo {
+    width: 186.25px;
+    height: 30px;
+  }
+}
