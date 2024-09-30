@@ -1,6 +1,6 @@
 /* hero_section */
 .hero_section_container {
-  background-image: url("/images/Background.png");
+  background-image: url("/images/Background.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }

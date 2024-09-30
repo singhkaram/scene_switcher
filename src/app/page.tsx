@@ -32,7 +32,7 @@ export default function Home() {
         </div>
 
         <Image
-          src={"/images/Frame.png"}
+          src={"/images/Frame.webp"}
           width={854}
           height={608}
           alt="image"
