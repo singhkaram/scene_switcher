@@ -1,9 +1,18 @@
+"use client";
+
 import { BenefitsData } from "@/data";
 import styles from "@/styles/styles.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react"; // Add useState and useEffect
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false); // State to track client-side rendering
+
+  useEffect(() => {
+    setIsClient(true); // Set to true after component mounts
+  }, []);
+
   return (
     <main className={styles.main_container}>
       <section className={styles.hero_section_container}>
@@ -58,9 +67,42 @@ export default function Home() {
         </p>
       </section>
       {/* <section className={styles.pricing_section_container}>pricing</section> */}
-      {/* <section className={styles.contactUs_section_container}>
-        contactus
-      </section> */}
+      <section className={styles.contactUs_section_container}>
+        <div className={styles.contactUs_text_container}>
+          <h1>Contact Us</h1>
+          <p>We&apos;d love to hear from you. Please fill out this form.</p>
+        </div>
+        {isClient && ( // Only render this part on the client
+          <form action="#" className={styles.form_container}>
+            <span className={styles.name_input_container}>
+              <label htmlFor="firstName">
+                First name
+                <input type="text" placeholder="First name" />
+              </label>
+              <label htmlFor="lastName">
+                Last name
+                <input type="text" placeholder="Last name" />
+              </label>
+            </span>
+            <label htmlFor="email">
+              Email
+              <input type="email" placeholder="you@company.com" />
+            </label>
+            <label htmlFor="message">
+              Message
+              <textarea rows={8} />
+            </label>
+            <button
+              type="submit"
+              name="submit"
+              id="submit"
+              className={styles.submit_btn}
+            >
+              Send message
+            </button>
+          </form>
+        )}
+      </section>
     </main>
   );
 }
