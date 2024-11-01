@@ -40,7 +40,42 @@ export default function Home() {
           className={styles.hero_image_container}
         />
       </section>
-      {/* <section className={styles.features_section_container}>features</section> */}
+      <section className={styles.power_section_container}>
+        <div className={styles.power_text_container}>
+          <h1>The Power Of SceneSwithcer.io</h1>
+          <p className="capitalize">
+            See how we turned this fatigued ad from barely breaking even to a
+            2-3 ROAS by simply changing the scenes, and the the voice-over while
+            keeping script exactly the same.
+          </p>
+        </div>
+        <div className={styles.power_main_image_container}>
+          <h2>Original video</h2>
+          <Image
+            src={"/images/Frame.webp"}
+            width={610}
+            height={562}
+            alt="image"
+            priority
+            className={styles.power_main_image}
+          />
+        </div>
+        <div className={styles.power_variation_container}>
+          {[...Array(3)].map((_, index) => (
+            <div key={index} className={styles.power_variation_box}>
+              <h2>Variation {index + 1}</h2>
+              <Image
+                src={"/images/Frame.webp"}
+                width={389}
+                height={380}
+                alt="image"
+                priority
+                className={styles.power_variation_image}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
       <section className={styles.benefits_section_container}>
         <div className={styles.benefits_text_container}>
           <h1>Why You Need This</h1>
