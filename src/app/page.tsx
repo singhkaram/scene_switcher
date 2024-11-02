@@ -1,5 +1,6 @@
 "use client";
 
+import { RightArrowLogo } from "@/components/svg/JoinSectionIcons";
 import { BenefitsData } from "@/data";
 import styles from "@/styles/styles.module.css";
 import Image from "next/image";
@@ -15,6 +16,7 @@ export default function Home() {
 
   return (
     <main className={styles.main_container}>
+      {/* hero-section */}
       <section className={styles.hero_section_container}>
         <div className={styles.hero_text_container}>
           <h1>
@@ -40,6 +42,7 @@ export default function Home() {
           className={styles.hero_image_container}
         />
       </section>
+      {/* power-section */}
       <section className={styles.power_section_container}>
         <div className={styles.power_text_container}>
           <h1>The Power Of SceneSwithcer.io</h1>
@@ -49,7 +52,7 @@ export default function Home() {
             keeping script exactly the same.
           </p>
         </div>
-        <div className={styles.power_main_image_container}>
+        <div className={`${styles.power_main_image_container} `}>
           <h2>Original video</h2>
           <Image
             src={"/images/Frame.webp"}
@@ -62,7 +65,10 @@ export default function Home() {
         </div>
         <div className={styles.power_variation_container}>
           {[...Array(3)].map((_, index) => (
-            <div key={index} className={styles.power_variation_box}>
+            <div
+              key={index}
+              className={`${styles.power_variation_box} drop-shadow-md md:drop-shadow-none`}
+            >
               <h2>Variation {index + 1}</h2>
               <Image
                 src={"/images/Frame.webp"}
@@ -76,6 +82,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* benefits-section */}
       <section className={styles.benefits_section_container}>
         <div className={styles.benefits_text_container}>
           <h1>Why You Need This</h1>
@@ -86,7 +93,10 @@ export default function Home() {
         </div>
         <div className={styles.benefits_card_container}>
           {BenefitsData.map((item) => (
-            <div key={item.id} className={styles.benefits_card}>
+            <div
+              key={item.id}
+              className={`${styles.benefits_card} drop-shadow-md`}
+            >
               {item.icon}
               <h2>{item.name}</h2>
               <p>{item.description}</p>
@@ -102,6 +112,7 @@ export default function Home() {
         </p>
       </section>
       {/* <section className={styles.pricing_section_container}>pricing</section> */}
+      {/* contact-us */}
       <section className={styles.contactUs_section_container}>
         <div className={styles.contactUs_text_container}>
           <h1>Contact Us</h1>
@@ -137,6 +148,25 @@ export default function Home() {
             </button>
           </form>
         )}
+      </section>
+      {/* join-section */}
+      <section className={styles.join_section_container}>
+        <div className={styles.join_text_container}>
+          <h1>Join the SceneSwithcer.io Revolution</h1>
+          <p>
+            Start optimizing your VSLs now. Get started with VSLOptimizer.io and
+            create unlimited new opportunities with your winning VSLs!
+          </p>
+        </div>
+        <div className={`${styles.join_get_started_container} drop-shadow-md`}>
+          <span>
+            Sign up now and experience the SceneSwitcher.io difference for
+            yourself. Your ROI will thank you!
+          </span>
+          <button type="button" className={styles.join_get_started_btn}>
+            Get started <RightArrowLogo />
+          </button>
+        </div>
       </section>
     </main>
   );
